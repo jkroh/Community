@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link rel = "stylesheet" type = "text/css" href = "/css/list.css">
+<script type="text/javascript" src="/Tigra_calendar/tcal.js"></script>
+<link rel="stylesheet" type="text/css" href="/Tigra_calendar/tcal.css" />
+<script>
+	function id_chk(){
+		document.getElementById('user_id').focus();
+	}
+	function user_modi(form){
+		form.submit();
+	}
+</script>
+</head>
+<body onload="id_chk()">
+	<form action="user_mod.php" method="post">
+	<table border="0" cellpadding="0" cellspacing="0" width="330" align="center">
+		<tr>
+			<td colspan="2"><h1>사용자수정</h1></td>	
+		</tr>
+		<tr height="30">
+			<td width="100">사용자ID:</td><td><input type="text" id="user_id" name="user_id" value=":Mz|user_id:"/></td>
+		</tr>
+		<tr height="30">
+			<td>사용자PW:</td><td><input type="password" id="user_pw" name="user_pw" /></td>
+		</tr>
+		<tr height="30">
+			<td>사용자이름:</td><td><input type="text" id="name" name="name" value=":Mz|name:"/></td>
+		</tr>
+		<tr height="30">
+			<td>메일주소:</td><td><input type="text" id="mail_addr" name="mail_addr" value=":Mz|mail_addr:"/></td>
+		</tr>
+		<tr height="30">
+			<td>소속부서:</td><td><input type="text" id="team" name="team" value=":Mz|team:"/></td>
+		</tr>
+		<tr height="30">
+			<td>직급:</td><td><input type="text" id="position" name="position" value=":Mz|position:"/></td>
+		</tr>
+		<tr height="30">
+			<td>전화번호:</td><td><input type="text" id="phone" name="phone" value=":Mz|phone:"/></td>
+		</tr>
+		<tr height="30">
+			<td>입사일:</td><td><input type="text" id="in_date" name="in_date" class="tcal" value=":Mz|in_date:"/></td>
+		</tr>
+		<tr height="30">
+			<td>연차관리 권한:</td>
+			<td><select id="vaca_option" name="vaca_option">
+					<option value=0 :Mz|vaca_op_select0:>Master</option>
+					<option value=1 :Mz|vaca_op_select1:>Manager</option>
+					<option value=2 :Mz|vaca_op_select2:>User</option>
+				</select>
+			</td>
+		</tr>
+		<tr height="30">
+			<td>게시판 권한:</td>
+			<td><select id="notice_option" name="notice_option">
+					<option value=0 :Mz|vaca_noti_select0:>Master</option>
+					<option value=1 :Mz|vaca_noti_select1:>Manager</option>
+					<option value=2 :Mz|vaca_noti_select2:>User</option>
+				</select>
+			</td>
+		</tr>
+		<tr height="80">
+			<td align="center"><input type="button" value="계정수정" onclick="user_modi(this.form)" /></td><td><input type="reset" value="초기화" /></td>
+		</tr>
+	</table>
+	<input type="hidden" id="mode" name="mode" value="modi" />
+	<input type="hidden" id="basic_id" name="basic_id" value=":Mz|user_id:" />
+	<input type="hidden" id="idx" name="idx" value=":Mz|idx:" />
+	</form>
+</body>
+</html>

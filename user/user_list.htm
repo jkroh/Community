@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="/css/list.css" />
+<script>
+	function user_mod(idx){
+		location.href = "user_mod.php?idx="+idx;
+	}
+	function user_del(idx,user_id){
+		var chk_result=confirm(user_id+"를 삭제하겠습니까?");
+		if(chk_result == true){
+			location.href = "user_del.php?idx="+idx;
+		}else{
+			return;
+		}
+	}
+</script>
+</head>
+<body>
+
+	<table border="0" cellpadding="0" cellspacing="0" width="880">
+		<tr>
+			<td colspan="2"><h1>사용자 관리</h1></td><td colspan="8" align="right"><input type="button" value="사용자추가" onclick="location.href='user_in.php'"/></td>
+		</tr>
+		<tr height="40" bgcolor="#CCCCCC" align="center">
+			<td class="under_border" width="90"><b>ID</b></td>
+			<td class="under_border" width="90"><b>이름</b></td>
+			<td class="under_border" width="100"><b>소속</b></td>
+			<td class="under_border" width="150"><b>메일주소</b></td>
+			<td class="under_border" width="50"><b>직급</b></td>
+			<td class="under_border" width="100"><b>전화번호</b></td>
+			<td class="under_border" width="120"><b>입사일</b></td>
+			<td class="under_border" width="100"><b>연차관리 권한</b></td>
+			<td class="under_border" width="80"><b>게시판권한</b></td>
+			<td></td>
+		</tr>
+		<!--#user_all_list-->
+		<tr height="60" align="center">
+			<td class="under_border">:Mz|user_id:</td>
+			<td class="under_border">:Mz|name:</td>
+			<td class="under_border">:Mz|team:</td>
+			<td class="under_border">:Mz|mail_addr:</td>
+			<td class="under_border">:Mz|position:</td>
+			<td class="under_border">:Mz|phone:</td>
+			<td class="under_border">:Mz|in_date:</td>
+			<td class="under_border">:Mz|vacation_lv:</td>
+			<td class="under_border">:Mz|notice_lv:</td>
+			<td class="under_border"><input type="button" value="수정" onclick="user_mod(':Mz|idx:')"/><br/><input type="button" value="삭제" style="margin-top:5px" onclick="user_del(':Mz|idx:',':Mz|user_id:')"/></td>
+		</tr>
+		<!--user_all_list#-->
+	</table>
+</body>
+</html>

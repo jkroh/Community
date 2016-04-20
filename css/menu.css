@@ -1,0 +1,20 @@
+/* CSS Document */
+
+body{
+			font-family:"³ª´®°íµñ";
+			font-size:13px;
+}
+
+.under_border{
+		border-bottom-color:#CCCCCC;
+		border-bottom-width:1px;
+		border-bottom-style:solid;
+	
+}
+.linker_button{
+		cursor:pointer;
+		
+}
+.linker_button:hover{
+		color:#CCCCCC;
+}
